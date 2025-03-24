@@ -1,117 +1,114 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart } from "lucide-react";
-
-const products = [
-  { id: 1, name: "Aviator Sunglasses", price: 1499, image: "/aviator.jpg" },
-  { id: 2, name: "Wayfarer Sunglasses", price: 1299, image: "/wayfarer.jpg" },
-  { id: 3, name: "Round Sunglasses", price: 999, image: "/round.jpg" },
-  { id: 4, name: "Clubmaster Sunglasses", price: 1599, image: "/clubmaster.jpg" },
-  { id: 5, name: "Oversized Sunglasses", price: 1799, image: "/oversized.jpg" },
-  { id: 6, name: "Sport Sunglasses", price: 1999, image: "/sport.jpg" },
-];
-
-function Home() {
-  return (
-    <div className="p-6 text-center">
-      <h1 className="text-4xl font-bold mb-6">Welcome to Goutam Lenses</h1>
-      <p className="text-lg mb-6">Find the best sunglasses for every occasion.</p>
-      <Link to="/shop">
-        <Button className="px-6 py-2 text-lg">Shop Now</Button>
-      </Link>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <div class="profile-image">
+            <img src="your-photo.jpg" alt="Profile Photo">
+    <title>My Portfolio | मेरा पोर्टफोलियो</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <button onclick="changeLanguage('en')" class="lang-btn">English</button>
+        <button onclick="changeLanguage('hi')" class="lang-btn">हिंदी</button>
     </div>
-  );
-}
 
-function Shop() {
-  return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Goutam Lenses - Shop</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <Card key={product.id} className="p-4 shadow-lg rounded-lg">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded-md" />
-            <CardContent>
-              <h2 className="text-xl font-semibold">{product.name}</h2>
-              <p className="text-gray-600">₹{product.price}</p>
-              <Button className="mt-4 w-full flex items-center gap-2">
-                <ShoppingCart size={18} /> <span>Add to Cart</span>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
-  );
-}
+    <header>
+        <nav>
+            <div class="en">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="hi">
+                <a href="#home">होम</a>
+                <a href="#about">परिचय</a>
+                <a href="#work">कार्य</a>
+                <a href="#contact">संपर्क</a>
+            </div>
+        </nav>
+    </header>
 
-function Login() {
-  const [mobile, setMobile] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
-  const [otp, setOtp] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+    <main>
+        <section id="home">
+            <div class="en">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Hi, I'm [Ankit Gautam]</p>
+            </div>
+            <div class="hi">
+                <h1>मेरे पोर्टफोलियो में आपका स्वागत है</h1>
+                <p>नमस्ते, मैं [अंकित गौतम] हूं</p
+            </div>
+        </section>
 
-  const sendOtp = () => {
-    if (mobile.length === 10) {
-      setOtpSent(true);
-      alert("OTP sent to " + mobile);
-    } else {
-      alert("Enter a valid 10-digit mobile number");
-    }
-  };
+        <section id="about">
+            <div class="en">
+                <h2>About Me</h2>
+                <p>My Name Ankit Kumar Basically I belong to Moradabad up and currently staying in Delhi I have completed my Graduation from Delhi university in 2020.]
+with expertise in [Strong communication & interpersonal skills Sales and customer relationship management
+ Process coordination & administrative efficiency
+ Punctual, disciplined, and hardworking
+ Adaptable and eager to learn
+ Problem-solving and analytical thinking ].</p>
+            </div>
+            <div class="hi">
+                <h2>मेरे बारे में</h2>
+                <p>मेरा नाम अंकित कुमार है, मैं मूल रूप से मुरादाबाद का रहने वाला हूं और वर्तमान में दिल्ली में रह रहा हूं, मैंने 2020 में दिल्ली विश्वविद्यालय से स्नातक की पढ़ाई पूरी की है।] हूं जिसे [ मजबूत संचार और पारस्परिक कौशल
+बिक्री और ग्राहक संबंध प्रबंधन
+ प्रक्रिया समन्वय और प्रशासनिक दक्षता
+ समयनिष्ठ, अनुशासित और मेहनती
+ अनुकूलनीय और सीखने के लिए उत्सुक
+ समस्या-समाधान और विश्लेषणात्मक सोच] में महारत है।</p>
+            </div>
+        </section>
 
-  const verifyOtp = () => {
-    if (otp.length === 6) {
-      setLoggedIn(true);
-      alert("Login Successful");
-    } else {
-      alert("Invalid OTP");
-    }
-  };
+        <section id="work">
+            <div class="en">
+                <h2>My Work</h2>
+                <div class="work-grid">
+                    <div class="work-item">Process Associate – Writer Information (Nov 2023 - Present)
+                    Managing data processing and operational tasks efficiently.
+ Ensuring accuracy and security of client information.
+ Collaborating with teams to improve workflow and service delivery. </div>
+                    <div class="work-item">Sales Executive (Home Loan) – HDFC Bank (April 2022 - Sep 2023) 
+ Assisted clients in selecting appropriate home loan solutions.
+ Built strong customer relationships, enhancing client retention.
+ Achieved and exceeded monthly sales targets through effective negotiation and
+communication skills. 
+</div>
+                  
+                </div>
+            </div>
+            <div class="hi">
+                <h2>मेरा काम</h2>
+                <div class="work-grid">
+                    <div class="work-item">प्रप्रोसेस एसोसिएट – लेखक सूचना (नवंबर 2023 - वर्तमान)
+                    डेटा प्रोसेसिंग और परिचालन कार्यों को कुशलतापूर्वक प्रबंधित करना। क्लाइंट जानकारी की सटीकता और सुरक्षा सुनिश्चित करना। वर्कफ़्लो और सेवा वितरण में सुधार के लिए टीमों के साथ सहयोग करना।</div>
+                    <div class="work-item">सेल्स एग्जीक्यूटिव (होम लोन) – एचडीएफसी बैंक (अप्रैल 2022 - सितंबर 2023) 
+                 ग्राहकों को उचित होम लोन समाधान चुनने में सहायता की।
+मजबूत ग्राहक संबंध बनाए, ग्राहक प्रतिधारण को बढ़ाया।
+प्रभावी बातचीत और
+संचार कौशल के माध्यम से मासिक बिक्री लक्ष्य हासिल किए और उससे आगे निकल गए।   </div>
+                   
+                </div>
+            </div>
+        </section>
 
-  return (
-    <div className="p-6 text-center">
-      <h1 className="text-3xl font-bold mb-6">Login with OTP</h1>
-      {!loggedIn ? (
-        !otpSent ? (
-          <>
-            <input type="tel" placeholder="Enter Mobile Number" value={mobile} onChange={(e) => setMobile(e.target.value)} className="p-2 border rounded mb-4 w-full" />
-            <Button className="w-full" onClick={sendOtp}>Send OTP</Button>
-          </>
-        ) : (
-          <>
-            <input type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} className="p-2 border rounded mb-4 w-full" />
-            <Button className="w-full" onClick={verifyOtp}>Verify OTP</Button>
-          </>
-        )
-      ) : (
-        <div>
-          <h2 className="text-2xl font-semibold">Welcome, User</h2>
-          <p className="text-gray-600">Mobile: {mobile}</p>
-          <Button className="mt-4" onClick={() => setLoggedIn(false)}>Logout</Button>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default function App() {
-  return (
-    <Router>
-      <nav className="p-4 bg-gray-200 flex justify-between">
-        <Link to="/" className="text-xl font-bold">Goutam Lenses</Link>
-        <div>
-          <Link to="/shop" className="mr-4">Shop</Link>
-          <Link to="/login">Login</Link>
-        </div>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
-  );
-}
+        <section id="contact">
+            <div class="en">
+                <h2>Contact Me</h2>
+                <p>Email: ankitku8287@gmail.com</p>
+                <p>Phone: 7701878400,7011886880</p>
+            </div>
+            <div class="hi">
+                <h2>संपर्क करें</h2>
+                <p>ईमेल: ankitku8287@gmail.com</p>
+                <p>फोन: 7701878400,7011886880</p>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
